@@ -1,0 +1,10 @@
+version: "3"
+services:
+  web:
+    build: .
+    image: forforeach/attracker-web
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "4000:3000"

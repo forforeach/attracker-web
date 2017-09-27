@@ -16,7 +16,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "lint": "eslint src/**/*.js",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docker": "docker-compose up",
+    "docker:background": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build"
   },
   "devDependencies": {
     "eslint": "^4.7.2",
