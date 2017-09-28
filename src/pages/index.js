@@ -1,9 +1,9 @@
 import Home from './home/Home';
-import About from './about/About';
+import Login from './login/Login';
 
 const pages = {
   Home,
-  About
+  Login
 };
 
 export default pages;

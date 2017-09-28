@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter, Link } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
+import PrivateRoute from './components/PrivateRoute';
 import routes from './routes';
 import logo from './logo.svg';
 
@@ -20,7 +21,7 @@ class App extends Component {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/login">Login</Link>
           </li>
         </ul>
 
@@ -28,8 +29,11 @@ class App extends Component {
           <img src={logo} alt="react" />
         </div>
         <Switch>
-          {routes.map((route) => (
+          {routes.public.map((route) => (
             <Route key={route.path} path={route.path} component={route.component} />
+          ))}
+          {routes.private.map((route) => (
+            <PrivateRoute key={route.path} path={route.path} component={route.component} />
           ))}
         </Switch>
       </div>

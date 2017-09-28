@@ -1,13 +1,14 @@
 import pages from './../pages';
 
-const routes = [
-  {
-    path: '/about',
-    component: pages.About
-  }, {
+const routes = {
+  public: [{
+    path: '/login',
+    component: pages.Login
+  }],
+  private: [{
     path: '/',
     component: pages.Home
-  }
-];
+  }]
+};
 
 export default routes;
