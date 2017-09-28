@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
 @inject('authStore')
 @withRouter
@@ -24,34 +26,26 @@ class Login extends Component {
       <div>
         <h1>Login page</h1>
         <form onSubmit={this.handleSubmitForm}>
-          <fieldset>
-
-            <fieldset className="form-group">
-              <input
-                className="form-control form-control-lg"
-                type="email"
-                placeholder="Email"
-                value={authUser.email}
-                onChange={this.handleEmailChange}
-              />
-            </fieldset>
-
-            <fieldset className="form-group">
-              <input
-                className="form-control form-control-lg"
-                type="password"
-                placeholder="Password"
-                value={authUser.password}
-                onChange={this.handlePasswordChange}
-              />
-            </fieldset>
-
-            <button
-              className="btn btn-lg btn-primary pull-xs-right"
-              type="submit"
-            > Sign in</button>
-
-          </fieldset>
+          <div>
+            <TextField
+              type="email"
+              floatingLabelText="Email"
+              hintText="joe@mail.com"
+              value={authUser.email}
+              onChange={this.handleEmailChange}
+            />
+          </div>
+          <div>
+            <TextField
+              type="password"
+              floatingLabelText="Password"
+              value={authUser.password}
+              onChange={this.handlePasswordChange}
+            />
+          </div>
+          <div>
+            <RaisedButton label="Primary" primary={true} type="submit"/>
+          </div>
         </form>
       </div>
     );
